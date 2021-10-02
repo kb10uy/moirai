@@ -2,6 +2,8 @@
 
 pub mod local;
 
+pub use local::LocalFilesystem;
+
 use std::{
     error::Error as StdError,
     fmt::{Display, Formatter, Result as FmtResult},
