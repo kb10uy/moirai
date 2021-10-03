@@ -1,2 +1,7 @@
 /target
 /data
+
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+.pnp.*
