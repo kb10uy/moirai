@@ -8,4 +8,7 @@ edition = "2018"
 [dependencies]
 async-std = "1.10.0"
 async-trait = "0.1.51"
+sqlx = { version = "0.5.9", features = ["runtime-async-std-native-tls", "postgres", "uuid", "chrono"] }
 uuid = { version = "0.8.2", features = ["v4"] }
+chrono = { version = "0.4.19", features = ["serde"] }
+serde = { version = "1.0.130", features = ["derive"] }
