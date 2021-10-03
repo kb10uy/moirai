@@ -49,10 +49,10 @@ impl Bookmark {
 
 #[derive(Debug, Clone, PartialEq, Eq, PartialOrd, Ord, Hash, Default)]
 pub struct BookmarkBuilder {
-    id: Option<i64>,
-    title: String,
-    url: Option<String>,
-    description: Option<String>,
+    pub(crate) id: Option<i64>,
+    pub(crate) title: String,
+    pub(crate) url: Option<String>,
+    pub(crate) description: Option<String>,
 }
 
 impl BookmarkBuilder {

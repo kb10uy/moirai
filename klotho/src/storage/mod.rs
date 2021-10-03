@@ -23,7 +23,7 @@ pub struct Error {
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash)]
-// #[non_exhaustive]
+#[non_exhaustive]
 pub enum ErrorKind {
     /// Invalid configuration state was detected.
     InvalidConfiguration,
