@@ -1,7 +1,10 @@
 mod app;
 
+use crate::app::{Arguments, Subcommand};
+
 use anyhow::Result;
 use klotho::storage::{LocalFilesystem, Storage};
+use log::info;
 use structopt::StructOpt;
 
 #[async_std::main]
@@ -11,10 +14,18 @@ async fn main() -> Result<()> {
         .start()
         .expect("Failed to start logger");
 
-    let args = app::Arguments::from_args();
+    let args = Arguments::from_args();
 
-    let storage = LocalFilesystem::new("./data").await?;
-    let filename = storage.store(b"Hello", Some(".txt")).await?;
-    println!("Stored into {}", filename);
+    match args.subcommand {
+        Subcommand::Register { .. } => {
+            let storage = LocalFilesystem::new("./data").await?;
+            let filename = storage.store(b"Hello", Some(".txt")).await?;
+            info!("Stored into {}", filename);
+        }
+        Subcommand::Update { .. } => todo!(),
+        Subcommand::Delete { .. } => todo!(),
+        Subcommand::Fetch { .. } => todo!(),
+    }
+
     Ok(())
 }

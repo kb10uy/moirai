@@ -361,6 +361,7 @@ dependencies = [
  "async-std",
  "flexi_logger",
  "klotho",
+ "log",
  "structopt",
  "surf",
  "tide",
@@ -1347,6 +1348,7 @@ dependencies = [
  "async-trait",
  "chrono",
  "futures",
+ "log",
  "serde",
  "sqlx",
  "uuid",
@@ -1369,6 +1371,7 @@ dependencies = [
  "async-std",
  "flexi_logger",
  "klotho",
+ "log",
  "structopt",
 ]
 
